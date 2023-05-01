@@ -10,9 +10,12 @@ Firmware
   to get mip instead of unsupported upip https://github.com/micropython/micropython/issues/7486
 
 Network Config
-- Managing credentials https://swharden.com/blog/2021-05-15-python-credentials/
-- Configure network with some kind of dotenv https://forum.micropython.org/viewtopic.php?t=9369
-  - mpy-env
-    - https://pypi.org/project/micropython-mpy-env/
-    - https://github.com/ShenTengTu/micropython-env/blob/master/examples/main.py
+- esp32 Networking https://docs.micropython.org/en/latest/esp32/quickref.html#networking
+- Managing credentials
+    - Managing credentials https://swharden.com/blog/2021-05-15-python-credentials/
+    - Configure network with some kind of dotenv https://forum.micropython.org/viewtopic.php?t=9369
+    - mpy-env
+        - https://pypi.org/project/micropython-mpy-env/
+        - https://github.com/ShenTengTu/micropython-env/blob/master/examples/main.py
+
 
