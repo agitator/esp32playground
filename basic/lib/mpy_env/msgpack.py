@@ -32,7 +32,7 @@ _EXT_LIST = b"\x01"
 
 _b_to_uint = lambda x: int.from_bytes(x, "big")
 
-_two_comp = lambda x, y: (x - 2 ** y * (x >> (y - 1)))
+_two_comp = lambda x, y: (x - 2**y * (x >> (y - 1)))
 
 _iter_encode = (
     lambda prefix, fmt_len, data: prefix
@@ -109,8 +109,8 @@ def serialize(obj, single_float=False, ext_default=_app_ext_encode):
         raise OverflowError("The bytearray length is out of the range")
     ## == Float == ##
     if t is float:
-        f32_max = (2 - 2 ** -23) * 2 ** 127
-        f64_max = (2 - 2 ** -52) * 2 ** 1023
+        f32_max = (2 - 2**-23) * 2**127
+        f64_max = (2 - 2**-52) * 2**1023
         if obj >= -f32_max and obj <= f32_max:  # float32
             if not single_float:  # float64
                 return _number_encode(b"\xcb", "d", obj)
@@ -344,7 +344,7 @@ def deserialize(raw_data, ext_hook=_app_ext_decode):
             if prefix in prefixs:
                 index = prefixs.index(prefix)
                 if index <= 4:
-                    length = 2 ** index
+                    length = 2**index
                     ext_type = raw[1:2]
                     pointer = 2 + length
                     ext_data = raw[2:pointer]

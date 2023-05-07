@@ -23,9 +23,11 @@
 import os
 import io
 import json
-# from .msgpack import serialize, deserialize
+
+# from msgpack import serialize, deserialize
 
 __version__ = "0.2.0"
+
 
 class _Env:
     """Environment variable loader For MicroPython board.
@@ -102,8 +104,7 @@ class _Env:
 
 
 def load_env(f_type=0, verbose=False):
-    """Loading environment variables from the file at root.
-    """
+    """Loading environment variables from the file at root."""
     _Env.verbose = verbose
     if f_type == 0:
         return _Env.load_from_json()
@@ -112,12 +113,10 @@ def load_env(f_type=0, verbose=False):
 
 
 def get_env(key: str):
-    """Get the loaded environment variable.
-    """
+    """Get the loaded environment variable."""
     return _Env.get(key)
 
 
 def put_env(key: str, obj):
-    """Set an environment variable
-    """
+    """Set an environment variable"""
     _Env.put(key, obj)
