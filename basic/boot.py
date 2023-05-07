@@ -4,6 +4,7 @@ ENV = False
 try:
     import os
     from mpy_env import load_env, get_env
+
     if "env.json" in os.listdir():
         load_env(verbose=True)
         ENV = True
@@ -15,4 +16,5 @@ except Exception as e:
 
 if ENV:
     from utils import do_connect
+
     do_connect(get_env("WIFI_SSID"), get_env("WIFI_PASSWD"))
