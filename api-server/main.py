@@ -13,7 +13,7 @@ app = Microdot()
 current_task = None
 
 
-htmldoc = '''<!DOCTYPE html>
+htmldoc = """<!DOCTYPE html>
 <html>
     <head>
         <title>Microdot Example Page</title>
@@ -27,27 +27,27 @@ htmldoc = '''<!DOCTYPE html>
         </div>
     </body>
 </html>
-'''
+"""
 
 
-@app.route('/')
+@app.route("/")
 async def hello(request):
-    return htmldoc, 200, {'Content-Type': 'text/html'}
+    return htmldoc, 200, {"Content-Type": "text/html"}
 
 
-@app.route('/lights')
+@app.route("/lights")
 async def hello(request):
     lights()
     print("lights")
 
     global current_task
     current_task = uasyncio.create_task(lights())
-    return htmldoc, 200, {'Content-Type': 'text/html'}
+    return htmldoc, 200, {"Content-Type": "text/html"}
 
 
-@app.route('/fill')
+@app.route("/fill")
 async def fill(request):
-    """Takes URL arguments: fill?r=50&g=20&b=20 """
+    """Takes URL arguments: fill?r=50&g=20&b=20"""
 
     args_dict = {}
     for key in request.args.keys():
@@ -56,13 +56,13 @@ async def fill(request):
     print(args_dict)
     global current_task
     current_task = uasyncio.create_task(fillstrip(**args_dict))
-    return 'Set Props: {}'.format(args_dict)
+    return "Set Props: {}".format(args_dict)
 
 
-@app.route('/shutdown')
+@app.route("/shutdown")
 async def shutdown(request):
     request.app.shutdown()
-    return 'The server is shutting down...'
+    return "The server is shutting down..."
 
 
 @app.before_request
@@ -72,7 +72,7 @@ async def pre_request_handler(request):
 
 
 def start_server():
-    print('Starting microdot app')
+    print("Starting microdot app")
     try:
         app.run(port=80, debug=True)
     except:

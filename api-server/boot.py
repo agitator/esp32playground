@@ -19,7 +19,7 @@ if ENV:
 
     if get_env("HOSTNAME"):
         import network
+
         network.hostname(get_env("HOSTNAME"))
         print(network.hostname())
     do_connect(get_env("WIFI_SSID"), get_env("WIFI_PASSWD"))
-
