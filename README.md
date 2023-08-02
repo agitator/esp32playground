@@ -21,6 +21,8 @@ Basic Tooling
   - https://github.com/dhylands/rshell
   - https://github.com/wendlers/mpfshell
   - sticking to pymakr for now - just be cautios to not have other pymakr project opens that block that serial
+  - https://www.digikey.ch/en/maker/projects/micropython-basics-load-files-run-code/fb1fcedaf11e4547943abfdd8ad825ce
+
 
 Network Config
 --------------
@@ -31,3 +33,14 @@ Network Config
     - mpy_env: manually installed, disabled msgpack support to run it
         - https://pypi.org/project/micropython-mpy-env/
         - https://github.com/ShenTengTu/micropython-env/blob/master/examples/main.py
+
+
+API-Webserver
+-------------
+
+- https://www.electronicsforu.com/electronics-projects/api-server-esp8266-using-micropython
+- https://github.com/peterhinch/micropython-samples
+
+- https://bhave.sh/micropython-microdot/ ESP32 Web Server using Microdot
+- https://microdot.readthedocs.io “The impossibly small web framework for Python and MicroPython”
+
